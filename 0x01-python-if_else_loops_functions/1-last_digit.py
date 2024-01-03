@@ -2,8 +2,9 @@
 import random
 # Generate a random number between -10 and 10
 number = random.randint(-10000, 10000)
-number = str(number)
-last_digit = int(number[-1])
+last_digit = abs(number) % 10
+if number < 0:
+    last_digit *= -1
 print(f"Last digit of {number} is {last_digit}", end="")
 # Check if the number is positive, negative, or zero
 if last_digit > 5:
