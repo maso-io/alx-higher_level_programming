@@ -5,4 +5,4 @@ for char in range(97, 123):
         continue
     if char == 113:
         continue
-    print(chr(char), end="")
+    print("{}".format(chr(char)), end="")
