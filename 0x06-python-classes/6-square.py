@@ -1,32 +1,27 @@
 #!/usr/bin/python3
+"""Defininng a Square Class"""
+
+
 class Square:
     """
-        Class that represents a square of a defined `size`
-
-        Attributes:
-            size (float): The size of the square.
-            position (:tuple: `int`, `int`): Position of the square
-
-        Raises:
-        TypeError: If `size` is not an integer.
-        ValueError: If `size` is less than 0.
+        Class that represents a square of a defined `size`.
     """
     def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self._size = size
-        self._position = position
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """
             Computes the area of a square of given `size`.
 
             Return:
-                float: the area of the square.
+            float: the area of the square.
         """
-        return self._size ** 2
+        return self.__size ** 2
 
     @property
     def size(self):
@@ -34,9 +29,9 @@ class Square:
             Returns the size of a square
 
             Return:
-                float: square size
+            float: square size
         """
-        return self._size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -44,31 +39,31 @@ class Square:
             Updates the size of the square
 
             Args:
-                value (float): `size` of the square.
+            value (float): `size` of the square.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self._size = value
+        self.__size = value
 
     def my_print(self):
         """
             Prints in stdout the square with the character #
         """
-        if self._size < 0:
+        if self.__size < 0:
             pass
-        elif self._size == 0:
+        elif self.__size == 0:
             print()
         else:
-            if self._position[1] > 0:
-                for _ in range(self._position[1]):
+            if self.__position[1] > 0:
+                for _ in range(self.__position[1]):
                     print("")
-            for _ in range(self._size):
+            for _ in range(self.__size):
                 tmp = ''
-                if self._position[0] > 0:
-                    tmp += "_" * self._position[0]
-                tmp += '#' * self._size
+                if self.__position[0] > 0:
+                    tmp += "_" * self.__position[0]
+                tmp += '#' * self.__size
                 print("{}".format(tmp))
 
     @property
@@ -77,9 +72,9 @@ class Square:
             Returns the position of the square
 
             Return:
-                tuple (`int`, `int`): coordinate position of the square
+            tuple (`int`, `int`): coordinate position of the square
         """
-        return self._position[0], self._position[1]
+        return self.__position[0], self.__position[1]
 
     @position.setter
     def position(self, position=(0, 0)):
@@ -87,11 +82,11 @@ class Square:
             Updates the position of the square
 
             Args:
-                position (:tuple: `int`, `int`): tuple to update the position
-                of the square.
+            position (:tuple: `int`, `int`): tuple to update the position
+            of the square.
         """
-        if not isinstance(position, type((0,0))):
+        if not isinstance(position, type((0, 0))):
             print("position must be a tuple of 2 positive integers")
         if position[0] < 0 or position[1] < 0 or len(position) != 2:
             print("position must be a tuple of 2 positive integers")
-        self._position = position[0], position[1]
+        self.__position = position[0], position[1]
