@@ -2,9 +2,12 @@
 class Square:
     """
         Class that represents a square of a defined `size`
-
-        Attributes:
-            size (float): The size of the square
     """
     def __init__(self, size):
+        """
+            Initializes an instance of the class.
+
+            Args:
+                size (float): The size of the square
+        """
         self._size = size
