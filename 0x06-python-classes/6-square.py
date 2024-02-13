@@ -6,7 +6,14 @@ class Square:
     """
         Class that represents a square of a defined `size`.
     """
+
     def __init__(self, size=0, position=(0, 0)):
+        """Initialize the new instance of a square.
+
+        Args:
+        size (float): The size of the new square.
+        position (int, int): The position of the new square.
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
