@@ -62,7 +62,7 @@ class Square:
             for _ in range(self.__size):
                 tmp = ''
                 if self.__position[0] > 0:
-                    tmp += "_" * self.__position[0]
+                    tmp += " " * self.__position[0]
                 tmp += '#' * self.__size
                 print("{}".format(tmp))
 
