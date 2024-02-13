@@ -92,7 +92,8 @@ class Square:
             position (:tuple: `int`, `int`): tuple to update the position
             of the square.
         """
-        if not isinstance(position, type((0, 0))):
+        if not isinstance(position, tuple) or not all(isinstance(num, int) for
+                num in value):
             print("position must be a tuple of 2 positive integers")
         if position[0] < 0 or position[1] < 0 or len(position) != 2:
             print("position must be a tuple of 2 positive integers")
